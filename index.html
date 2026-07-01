@@ -96,12 +96,18 @@
     .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
     .hero-meta span { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(7,11,19,.32); color: rgba(255,255,255,.78); font-family: "Space Mono", ui-monospace, monospace; font-size: 12px; backdrop-filter: blur(12px); }
     section { padding: 82px 0; }
+    .trust-strip { padding: 0; background: #fff; border-bottom: 1px solid var(--line); }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border-inline: 1px solid var(--line); }
+    .trust-item { padding: 22px 18px; background: #fff; }
+    .trust-item .ph { display: block; margin-bottom: 10px; color: var(--secondary); font-size: 25px; }
+    .trust-item strong { display: block; font-size: 22px; line-height: 1.1; }
+    .trust-item span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.4; }
     .brand-strip { padding: 28px 0; background: #fff; border-bottom: 1px solid var(--line); overflow: hidden; }
     .brand-strip .wrap { display: grid; gap: 16px; }
     .brand-rail { display: flex; gap: 10px; flex-wrap: wrap; }
     .pill-row { display: flex; gap: 10px; flex-wrap: wrap; }
-    .brand-pill, .region-pill { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 15px; border-radius: 999px; border: 1px solid var(--line); background: #fff; font-weight: 850; font-size: 13px; color: var(--ink); box-shadow: 0 10px 24px rgba(13,17,23,.04); }
-    .brand-pill .ph, .region-pill .ph { color: var(--secondary); }
+    .brand-pill, .region-pill { display: inline-flex; align-items: center; gap: 9px; min-height: 40px; padding: 0 15px; border-radius: 999px; background: #f2f5f9; font-weight: 850; font-size: 13px; color: var(--ink); }
+    .brand-pill::before, .region-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--secondary); }
     .section-head { display: grid; gap: 10px; max-width: 780px; margin-bottom: 34px; }
     .section-head.center { margin-inline: auto; text-align: center; }
     .section-head h2, .split-copy h2, .band h2, .steps h2, .contact h2 { margin: 0; font-size: clamp(31px, 5vw, 58px); line-height: 1.02; letter-spacing: 0; text-wrap: balance; }
@@ -128,7 +134,7 @@
     .band-grid { display: grid; grid-template-columns: .86fr 1.14fr; gap: 38px; align-items: center; }
     .band p { color: rgba(255,255,255,.76); }
     .signal-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .signal { padding: 18px; border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); background: rgba(255,255,255,.08); }
+    .signal { padding: 20px; border-radius: var(--radius); background: rgba(255,255,255,.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
     .signal .ph { color: var(--accent); font-size: 25px; }
     .signal strong { display: block; margin: 9px 0 5px; }
     .signal span { color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.5; }
@@ -184,7 +190,7 @@
       h1 { font-size: clamp(39px, 13vw, 60px); line-height: .92; }
       .hero-line, .lead { font-size: 17px; }
       .actions .button { width: 100%; }
-      .service-grid, .split, .band-grid, .region-grid, .step-grid, .faq-grid, .footer-grid { grid-template-columns: 1fr; }
+      .trust-grid, .service-grid, .split, .band-grid, .region-grid, .step-grid, .faq-grid, .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; }
       section { padding: 58px 0; }
       .split-media, .split-media img { min-height: 360px; }
@@ -199,7 +205,7 @@
       <a class="brand" href="#"><span class="brand-mark">A</span><span>Auto Center Modelo</span></a>
       <div class="nav-links" aria-label="Navegação principal">
         <a href="#servicos">Serviços</a>
-        <a href="#ia">Google e IA</a>
+        <a href="#ia">Confiança</a>
         <a href="#como-funciona">Como funciona</a>
         <a href="#faq">Dúvidas</a>
       </div>
@@ -224,10 +230,19 @@
   </header>
 
   <main>
+    <section class="trust-strip" aria-label="Resumo de confiança">
+      <div class="wrap trust-grid">
+        <div class="trust-item"><i class="ph ph-star" aria-hidden="true"></i><strong>4,7/5</strong><span>128 avaliações</span></div>
+        <div class="trust-item"><i class="ph ph-map-pin" aria-hidden="true"></i><strong>Curitiba</strong><span>Atendimento local e RMC</span></div>
+        <div class="trust-item"><i class="ph ph-car" aria-hidden="true"></i><strong>Multimarcas</strong><span>carros populares e multimarcas</span></div>
+        <div class="trust-item"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><strong>WhatsApp</strong><span>Agendamento direto</span></div>
+      </div>
+    </section>
+
     <section class="brand-strip">
       <div class="wrap">
         <p class="eyebrow">Marcas atendidas</p>
-        <div class="brand-rail"><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Fiat</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Chevrolet</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Volkswagen</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Renault</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Hyundai</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Toyota</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Honda</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Nissan</span></div>
+        <div class="brand-rail"><span class="brand-pill">Fiat</span><span class="brand-pill">Chevrolet</span><span class="brand-pill">Volkswagen</span><span class="brand-pill">Renault</span><span class="brand-pill">Hyundai</span><span class="brand-pill">Toyota</span><span class="brand-pill">Honda</span><span class="brand-pill">Nissan</span></div>
       </div>
     </section>
 
@@ -235,13 +250,13 @@
       <div class="wrap">
         <div class="section-head center reveal">
           <p class="eyebrow">Serviços</p>
-          <h2>Serviços fáceis de reconhecer. Decisão mais rápida.</h2>
-          <p>O visitante entende o essencial sem garimpar informação: tipo de atendimento, marcas, localização e canal direto.</p>
+          <h2>O cuidado certo para o carro sair redondo.</h2>
+          <p>Atendimento direto para quem precisa resolver barulho, revisão, freio, suspensão ou dúvida mecânica sem perder tempo.</p>
         </div>
         <div class="service-grid">
-          <article class="service-card reveal"><img src="assets/images/service-1.webp" width="1024" height="768" alt="Diagnóstico automotivo para carros populares e multimarcas"><div class="service-body"><h3><i class="ph ph-gauge" aria-hidden="true"></i>Diagnóstico preciso</h3><p>Barulhos, luzes no painel, falhas, perda de desempenho e dúvidas sobre manutenção são explicados com clareza antes do serviço.</p></div></article>
-          <article class="service-card reveal"><img src="assets/images/service-2.webp" width="1024" height="768" alt="Freios, pneus e suspensão para carros populares e multimarcas"><div class="service-body"><h3><i class="ph ph-steering-wheel" aria-hidden="true"></i>Segurança no dia a dia</h3><p>Freios, pneus, suspensão e itens de rodagem pensados para chuva, asfalto irregular e deslocamentos pela Grande Curitiba.</p></div></article>
-          <article class="service-card reveal"><img src="assets/images/trust.webp" width="1024" height="768" alt="Atendimento consultivo de oficina"><div class="service-body"><h3><i class="ph ph-wrench" aria-hidden="true"></i>Revisão preventiva</h3><p>Planejamento de manutenção para evitar parada inesperada, retrabalho e gasto maior depois.</p></div></article>
+          <article class="service-card reveal"><img src="assets/images/service-1.webp" width="1024" height="768" alt="Diagnóstico automotivo para carros populares e multimarcas" loading="lazy"><div class="service-body"><h3><i class="ph ph-gauge" aria-hidden="true"></i>Diagnóstico</h3><p>Falhas, ruídos, luz no painel e perda de desempenho avaliados com orientação clara antes do serviço.</p></div></article>
+          <article class="service-card reveal"><img src="assets/images/service-2.webp" width="1024" height="768" alt="Freios, pneus e suspensão para carros populares e multimarcas" loading="lazy"><div class="service-body"><h3><i class="ph ph-steering-wheel" aria-hidden="true"></i>Freios e suspensão</h3><p>Itens essenciais para dirigir com segurança em chuva, trânsito e deslocamentos pela Grande Curitiba.</p></div></article>
+          <article class="service-card reveal"><img src="assets/images/trust.webp" width="1024" height="768" alt="Atendimento consultivo de oficina" loading="lazy"><div class="service-body"><h3><i class="ph ph-wrench" aria-hidden="true"></i>Revisão preventiva</h3><p>Manutenção planejada para evitar parada inesperada, retrabalho e gasto maior depois.</p></div></article>
         </div>
       </div>
     </section>
@@ -249,18 +264,18 @@
     <section>
       <div class="wrap split">
         <div class="split-copy reveal">
-          <p class="eyebrow">Conversão rápida</p>
-          <h2>Menos texto genérico. Mais motivo para o cliente chamar.</h2>
-          <p>O visitante não quer decifrar um site. Ele quer saber se a oficina atende o carro dele, se está perto, se passa confiança e como falar agora. A página organiza isso em uma sequência simples.</p>
+          <p class="eyebrow">Atendimento</p>
+          <h2>Você explica o sintoma. A oficina orienta o próximo passo.</h2>
+          <p>Sem formulário longo: informe marca, modelo, ano e o que está acontecendo. A Auto Center Modelo direciona o atendimento pelo WhatsApp.</p>
           <div class="benefit-list">
-            <div class="benefit"><i class="ph ph-check-circle" aria-hidden="true"></i><div><strong>Atendimento reconhecível</strong><span>Curitiba, RMC, bairros e rotina real de quem dirige na região.</span></div></div>
-            <div class="benefit"><i class="ph ph-car" aria-hidden="true"></i><div><strong>Marcas e perfil de veículo</strong><span>Conteúdo ajustado para carros populares e multimarcas, sem parecer uma oficina genérica.</span></div></div>
-            <div class="benefit"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><div><strong>CTA direto</strong><span>Botões de WhatsApp com mensagem pronta para reduzir atrito.</span></div></div>
+            <div class="benefit"><i class="ph ph-check-circle" aria-hidden="true"></i><div><strong>Primeira orientação rápida</strong><span>Descreva o problema e receba um caminho provável para resolver.</span></div></div>
+            <div class="benefit"><i class="ph ph-car" aria-hidden="true"></i><div><strong>Perfil multimarcas</strong><span>Atendimento voltado para carros populares e multimarcas, incluindo Fiat, Chevrolet, Volkswagen, Renault, Hyundai, Toyota, Honda, Nissan.</span></div></div>
+            <div class="benefit"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><div><strong>Contato sem atrito</strong><span>WhatsApp com mensagem pronta para começar a conversa.</span></div></div>
           </div>
         </div>
         <figure class="split-media reveal">
-          <img src="assets/images/service-1.webp" width="1024" height="768" alt="Oficina automotiva em atendimento">
-          <figcaption class="media-caption"><span class="eyebrow">Fluxo pensado para ação</span><strong>Do primeiro clique ao WhatsApp.</strong></figcaption>
+          <img src="assets/images/service-1.webp" width="1024" height="768" alt="Oficina automotiva em atendimento" loading="lazy">
+          <figcaption class="media-caption"><span class="eyebrow">Atendimento direto</span><strong>Do sintoma ao agendamento.</strong></figcaption>
         </figure>
       </div>
     </section>
@@ -268,15 +283,15 @@
     <section class="band" id="ia">
       <div class="wrap band-grid reveal">
         <div>
-          <p class="eyebrow">Google e buscas com IA</p>
-          <h2>Informação estruturada para ser entendida por buscadores e assistentes de IA.</h2>
-          <p>Além de vender melhor, a página organiza dados importantes sobre serviços, marcas atendidas, localização, perguntas frequentes e canais de contato. Isso ajuda Google e ferramentas de IA a entenderem quando a oficina é uma boa resposta para uma busca local.</p>
+          <p class="eyebrow">Confiança local</p>
+          <h2>Informações claras para quem está escolhendo uma oficina.</h2>
+          <p>Endereço, marcas atendidas, serviços e perguntas frequentes ficam organizados para o cliente decidir com mais segurança antes de chamar.</p>
         </div>
         <div class="signal-grid">
           <div class="signal"><i class="ph ph-map-pin" aria-hidden="true"></i><strong>Localização clara</strong><span>Curitiba e região metropolitana</span></div>
           <div class="signal"><i class="ph ph-car" aria-hidden="true"></i><strong>Marcas atendidas</strong><span>Fiat, Chevrolet, Volkswagen, Renault, Hyundai, Toyota, Honda, Nissan</span></div>
-          <div class="signal"><i class="ph ph-question" aria-hidden="true"></i><strong>FAQ com intenção de busca</strong><span>Dúvidas reais antes de pedir orçamento.</span></div>
-          <div class="signal"><i class="ph ph-sparkle" aria-hidden="true"></i><strong>Dados semânticos</strong><span>Schema, headings, contexto local e conteúdo em PT-BR.</span></div>
+          <div class="signal"><i class="ph ph-question" aria-hidden="true"></i><strong>Dúvidas respondidas</strong><span>O básico antes de pedir orçamento.</span></div>
+          <div class="signal"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><strong>Canal direto</strong><span>WhatsApp +55 (41) 99999-9999 · contato@example.com</span></div>
         </div>
       </div>
     </section>
@@ -284,14 +299,14 @@
     <section class="region">
       <div class="wrap region-grid">
         <article class="region-panel dark reveal">
-          <p class="eyebrow">Regionalização</p>
-          <h2>Curitiba aparece no visual, no texto e na intenção da página.</h2>
-          <p>O site não fala como se pudesse estar em qualquer cidade. Ele usa referências locais, rotina urbana, clima, deslocamento e necessidades de quem dirige em Curitiba e região metropolitana.</p>
+          <p class="eyebrow">Curitiba e RMC</p>
+          <h2>Atendimento para a rotina de quem dirige na cidade.</h2>
+          <p>Chuva, vias movimentadas, deslocamentos diários e manutenção preventiva fazem parte da vida de quem usa o carro em Curitiba e região metropolitana.</p>
         </article>
         <article class="region-panel reveal">
-          <p class="eyebrow">Onde o cliente se reconhece</p>
-          <div class="pill-row"><span class="region-pill"><i class="ph ph-map-pin" aria-hidden="true"></i>Linha Verde</span><span class="region-pill"><i class="ph ph-map-pin" aria-hidden="true"></i>Batel</span><span class="region-pill"><i class="ph ph-map-pin" aria-hidden="true"></i>Água Verde</span><span class="region-pill"><i class="ph ph-map-pin" aria-hidden="true"></i>Portão</span><span class="region-pill"><i class="ph ph-map-pin" aria-hidden="true"></i>Boqueirão</span><span class="region-pill"><i class="ph ph-map-pin" aria-hidden="true"></i>São José dos Pinhais</span><span class="region-pill"><i class="ph ph-map-pin" aria-hidden="true"></i>Colombo</span><span class="region-pill"><i class="ph ph-map-pin" aria-hidden="true"></i>Araucária</span><span class="region-pill"><i class="ph ph-map-pin" aria-hidden="true"></i>Pinhais</span></div>
-          <p style="margin-top:18px;">Esse contexto também entra nos prompts das imagens, para criar cenas mais próximas de Curitiba/RMC em vez de fotos com cara de banco de imagem internacional.</p>
+          <p class="eyebrow">Região atendida</p>
+          <div class="pill-row"><span class="region-pill">Linha Verde</span><span class="region-pill">Batel</span><span class="region-pill">Água Verde</span><span class="region-pill">Portão</span><span class="region-pill">Boqueirão</span><span class="region-pill">São José dos Pinhais</span><span class="region-pill">Colombo</span><span class="region-pill">Araucária</span><span class="region-pill">Pinhais</span></div>
+          <p style="margin-top:18px;">Consulte pelo WhatsApp para confirmar disponibilidade de horário e atendimento para o seu bairro.</p>
         </article>
       </div>
     </section>
@@ -369,7 +384,7 @@
       </div>
       <div class="footer-bottom">
         <span>Prévia criada pela Agência Ampler.</span>
-        <span>SEO local · Schema · WhatsApp · Mobile-first</span>
+        <span>Curitiba e RMC · Multimarcas · WhatsApp</span>
       </div>
     </div>
   </footer>
