@@ -77,7 +77,7 @@
     .brand { display: inline-flex; align-items: center; gap: 10px; min-width: 0; font-weight: 900; }
     .brand span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .brand-mark { display: grid; place-items: center; flex: 0 0 auto; width: 40px; height: 40px; border-radius: var(--radius); color: #fff; background: var(--secondary); box-shadow: 0 12px 24px rgba(0,0,0,.22); }
-    .nav-links { display: flex; gap: 22px; align-items: center; color: rgba(255,255,255,.78); font-size: 13px; font-weight: 800; }
+    .nav-links { display: flex; gap: 18px; align-items: center; color: rgba(255,255,255,.78); font-size: 13px; font-weight: 800; }
     .nav-links a { transition: color .18s ease; }
     .nav-links a:hover { color: #fff; }
     .nav-cta, .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 0 20px; font-weight: 900; cursor: pointer; touch-action: manipulation; transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease), border-color .22s var(--ease); }
@@ -111,8 +111,8 @@
     .brand-pill::before, .region-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--secondary); }
     .section-head { display: grid; gap: 10px; max-width: 780px; margin-bottom: 34px; }
     .section-head.center { margin-inline: auto; text-align: center; }
-    .section-head h2, .split-copy h2, .band h2, .steps h2, .contact h2 { margin: 0; font-size: clamp(31px, 5vw, 58px); line-height: 1.02; letter-spacing: 0; text-wrap: balance; }
-    .section-head p, .service-card p, .split-copy p, .band p, .step p, .faq p, .contact p, .region-panel p { color: var(--muted); line-height: 1.68; }
+    .section-head h2, .split-copy h2, .band h2, .steps h2, .contact h2, .location-card h2 { margin: 0; font-size: clamp(31px, 5vw, 58px); line-height: 1.02; letter-spacing: 0; text-wrap: balance; }
+    .section-head p, .service-card p, .split-copy p, .band p, .step p, .faq p, .contact p, .region-panel p, .location-card p { color: var(--muted); line-height: 1.68; }
     .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .service-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: 0 16px 44px rgba(13,17,23,.06); transition: transform .26s var(--ease), box-shadow .26s var(--ease), border-color .26s var(--ease); }
     .service-card:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--secondary) 30%, var(--line)); box-shadow: var(--shadow); }
@@ -144,6 +144,15 @@
     .region-panel { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); }
     .region-panel.dark { color: #fff; background: var(--ink); border-color: var(--ink); }
     .region-panel.dark p { color: rgba(255,255,255,.76); }
+    .location { background: #fff; }
+    .location-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 22px; align-items: stretch; }
+    .location-card { min-height: 390px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; padding: 30px; border-radius: var(--radius); color: #fff; background: var(--ink); }
+    .location-card p { color: rgba(255,255,255,.76); }
+    .address-box { display: grid; gap: 8px; padding: 18px; border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); background: rgba(255,255,255,.08); }
+    .address-box span { color: rgba(255,255,255,.58); font-family: "Space Mono", ui-monospace, monospace; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+    .address-box strong { font-size: 18px; line-height: 1.35; }
+    .map-frame { min-height: 390px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--soft); box-shadow: var(--shadow); }
+    .map-frame iframe { display: block; width: 100%; height: 100%; min-height: 390px; border: 0; filter: saturate(.9) contrast(1.04); }
     .steps { background: var(--soft); }
     .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .step { position: relative; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
@@ -191,7 +200,7 @@
       h1 { font-size: clamp(39px, 13vw, 60px); line-height: .92; }
       .hero-line, .lead { font-size: 17px; }
       .actions .button { width: 100%; }
-      .trust-grid, .service-grid, .split, .band-grid, .region-grid, .step-grid, .faq-grid, .footer-grid { grid-template-columns: 1fr; }
+      .trust-grid, .service-grid, .split, .band-grid, .region-grid, .location-grid, .step-grid, .faq-grid, .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; }
       section { padding: 58px 0; }
       .split-media, .split-media img { min-height: 360px; }
@@ -207,6 +216,7 @@
       <div class="nav-links" aria-label="Navegação principal">
         <a href="#servicos">Serviços</a>
         <a href="#confianca">Confiança</a>
+        <a href="#localizacao">Como chegar</a>
         <a href="#como-funciona">Como funciona</a>
         <a href="#faq">Dúvidas</a>
       </div>
@@ -312,6 +322,27 @@
       </div>
     </section>
 
+        <section class="location" id="localizacao">
+      <div class="wrap location-grid">
+        <article class="location-card reveal">
+          <div>
+            <p class="eyebrow">Como chegar</p>
+            <h2>Encontre a Auto Center Modelo sem perder tempo.</h2>
+            <p>Use o mapa para conferir a região da oficina e abrir a rota antes de sair.</p>
+          </div>
+          <div class="address-box">
+            <span>Endereço</span>
+            <strong>Curitiba e região metropolitana</strong>
+          </div>
+          <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Curitiba%20e%20regi%C3%A3o%20metropolitana%20Auto%20Center%20Modelo" target="_blank" rel="noopener noreferrer"><i class="ph ph-map-pin" aria-hidden="true"></i>Abrir rota no mapa</a>
+        </article>
+        <div class="map-frame reveal">
+          <iframe title="Mapa com endereço da Auto Center Modelo em Curitiba" src="https://www.google.com/maps?q=Curitiba%20e%20regi%C3%A3o%20metropolitana%20Auto%20Center%20Modelo&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+
     <section class="steps" id="como-funciona">
       <div class="wrap">
         <div class="section-head center reveal">
@@ -347,7 +378,7 @@
         <h2>Fale com a Auto Center Modelo agora.</h2>
         <p class="lead">Explique o que aconteceu, informe marca e modelo do carro e receba orientação pelo WhatsApp.</p>
         <div class="actions" style="justify-content:center;"><a class="button primary" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Auto%20Center%20Modelo%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener noreferrer"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>Agendar pelo WhatsApp</a></div>
-        
+        <p><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Curitiba%20e%20regi%C3%A3o%20metropolitana%20Auto%20Center%20Modelo" target="_blank" rel="noopener noreferrer"><i class="ph ph-map-pin" aria-hidden="true"></i>Ver localização no mapa</a></p>
       </div>
     </section>
   </main>
@@ -379,7 +410,7 @@
           <div class="footer-list">
             <span>WhatsApp +55 (41) 99999-9999 · contato@example.com</span>
             <span>Curitiba e região metropolitana</span>
-            
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Curitiba%20e%20regi%C3%A3o%20metropolitana%20Auto%20Center%20Modelo" target="_blank" rel="noopener noreferrer">Ver no mapa</a>
           </div>
         </div>
       </div>
