@@ -2,7 +2,7 @@
     "schema": "ampler.codex-image-manifest.v1",
     "prospect_id": "auto-center-modelo",
     "company_name": "Auto Center Modelo",
-    "created_at": "2026-06-30T23:07:46-03:00",
+    "created_at": "2026-06-30T23:26:29-03:00",
     "image_count": 6,
     "required_image_count": 6,
     "icon_library": {
@@ -21,7 +21,6 @@
             "local": "ph-map-pin",
             "contact": "ph-phone-call",
             "seo": "ph-magnifying-glass",
-            "ai": "ph-sparkle",
             "faq": "ph-question",
             "car": "ph-car",
             "trust": "ph-check-circle",
