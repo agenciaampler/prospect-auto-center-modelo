@@ -2,7 +2,7 @@
     "schema": "ampler.codex-image-manifest.v1",
     "prospect_id": "auto-center-modelo",
     "company_name": "Auto Center Modelo",
-    "created_at": "2026-06-30T22:52:23-03:00",
+    "created_at": "2026-06-30T23:07:46-03:00",
     "image_count": 6,
     "required_image_count": 6,
     "icon_library": {
@@ -13,18 +13,19 @@
         "cdn_css": "https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css",
         "icons": {
             "primary_cta": "ph-whatsapp-logo",
-            "secondary_cta": "ph-list-checks",
+            "secondary_cta": "ph-arrow-right",
             "rating": "ph-star",
             "service_diagnostic": "ph-gauge",
             "service_brakes": "ph-steering-wheel",
             "service_preventive": "ph-wrench",
             "local": "ph-map-pin",
-            "contact": "ph-whatsapp-logo",
+            "contact": "ph-phone-call",
             "seo": "ph-magnifying-glass",
             "ai": "ph-sparkle",
             "faq": "ph-question",
-            "car_profile": "ph-car-profile",
-            "regional": "ph-road-horizon"
+            "car": "ph-car",
+            "trust": "ph-check-circle",
+            "schedule": "ph-calendar-check"
         }
     },
     "instructions": [
@@ -83,7 +84,7 @@
             "width": 1024,
             "height": 768,
             "aspect_ratio": "4:3",
-            "role": "Imagem de confianca/atendimento",
+            "role": "Imagem de confiança/atendimento",
             "required": true,
             "prompt": "Use case: ads-marketing\nAsset type: trust image for a Brazilian auto repair landing page\nPrimary request: photorealistic premium advertising photo showing trustworthy workshop service in Curitiba/RMC\nVehicle mix: popular Brazilian compact hatchbacks, sedans and small SUVs used daily in Curitiba, no visible badges; brands served reference: Fiat, Chevrolet, Volkswagen, Renault, Hyundai, Toyota, Honda, Nissan, without visible logos or emblems\nScene/backdrop: service advisor or mechanic explaining car maintenance with a clipboard/tablet beside a matching vehicle, fictional people only, clean workshop with regional urban details\nStyle/medium: realistic editorial commercial photography\nComposition/framing: 4:3 crop, warm human moment, clear automotive context, no text overlays\nLighting/mood: approachable, competent, honest, professional\nColor palette: subtle brand accents: primary #0F4C81, secondary #D7261E, accent #F4C430\nConstraints: fictional people, no real business identity, no logos, no readable text, no license plates, no watermark\nAvoid: exaggerated smiles, fake hands, messy workshop, generic stock image",
             "engine": "codex_image_gen",
