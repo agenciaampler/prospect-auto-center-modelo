@@ -10,6 +10,9 @@
   <meta property="og:description" content="Site rápido, claro e preparado para buscas modernas. Fale com a oficina pelo WhatsApp.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/og-image.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;850;900&family=Space+Mono:wght@400;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <script type="application/ld+json">{
     "@context": "https://schema.org",
@@ -67,7 +70,8 @@
     img { max-width: 100%; display: block; }
     .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
     .ph { font-size: 1.18em; line-height: 1; }
-    .hero { min-height: 94svh; color: #fff; background: linear-gradient(90deg, rgba(7,11,19,.94) 0%, rgba(7,11,19,.82) 38%, rgba(7,11,19,.22) 100%), url('assets/images/hero-mobile.webp'), linear-gradient(135deg, var(--primary), var(--navy)); background-size: cover; background-position: center; position: relative; overflow: hidden; }
+    .hero { min-height: 92svh; color: #fff; background: linear-gradient(90deg, rgba(7,11,19,.88) 0%, rgba(7,11,19,.58) 42%, rgba(7,11,19,.10) 100%), url('assets/images/hero-mobile.webp'), linear-gradient(135deg, var(--primary), var(--navy)); background-size: cover; background-position: center; position: relative; overflow: hidden; }
+    .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 32%; background: linear-gradient(0deg, rgba(7,11,19,.72), transparent); pointer-events: none; }
     .nav { position: absolute; z-index: 3; inset: 18px 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 18px; width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 12px 14px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(7,11,19,.46); backdrop-filter: blur(18px); }
     .brand { display: inline-flex; align-items: center; gap: 10px; min-width: 0; font-weight: 900; }
     .brand span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -82,17 +86,15 @@
     .button.dark { color: #fff; background: var(--ink); }
     .button:hover, .nav-cta:hover, .floating-wa:hover { transform: translateY(-2px); }
     .button:active, .nav-cta:active, .floating-wa:active { transform: translateY(0) scale(.98); }
-    .hero-content { position: relative; z-index: 2; display: grid; align-content: end; min-height: 94svh; padding: 132px 0 38px; }
-    .hero-copy { width: min(800px, 100%); }
-    .eyebrow { margin: 0 0 13px; color: var(--accent); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-    h1 { margin: 0; max-width: 850px; font-size: clamp(43px, 8vw, 92px); line-height: .94; letter-spacing: 0; text-wrap: balance; }
+    .hero-content { position: relative; z-index: 2; display: grid; align-content: end; min-height: 92svh; padding: 132px 0 34px; }
+    .hero-copy { width: min(980px, 100%); }
+    .eyebrow { margin: 0 0 13px; color: var(--accent); font-family: "Space Mono", ui-monospace, monospace; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1040px; font-family: Syncopate, Inter, sans-serif; font-size: clamp(42px, 9.2vw, 132px); line-height: .86; letter-spacing: 0; text-transform: uppercase; text-wrap: balance; overflow-wrap: anywhere; }
+    .hero-line { max-width: 560px; margin: 18px 0 0; color: rgba(255,255,255,.86); font-size: clamp(17px, 2vw, 22px); line-height: 1.35; font-weight: 700; }
     .lead { max-width: 690px; color: rgba(255,255,255,.84); font-size: clamp(17px, 2vw, 22px); line-height: 1.5; }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .hero-proof { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin-top: 54px; overflow: hidden; border: 1px solid rgba(255,255,255,.18); border-radius: var(--radius); background: rgba(255,255,255,.14); backdrop-filter: blur(14px); }
-    .proof-item { padding: 18px; background: rgba(7,11,19,.48); }
-    .proof-item .ph { display: block; margin-bottom: 8px; color: var(--accent); font-size: 26px; }
-    .proof-item strong { display: block; font-size: 22px; }
-    .proof-item span { display: block; margin-top: 4px; color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.4; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .hero-meta span { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(7,11,19,.32); color: rgba(255,255,255,.78); font-family: "Space Mono", ui-monospace, monospace; font-size: 12px; backdrop-filter: blur(12px); }
     section { padding: 82px 0; }
     .brand-strip { padding: 28px 0; background: #fff; border-bottom: 1px solid var(--line); overflow: hidden; }
     .brand-strip .wrap { display: grid; gap: 16px; }
@@ -152,7 +154,17 @@
     .contact .lead { margin: 18px auto 0; color: rgba(255,255,255,.80); }
     .map-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: rgba(255,255,255,.82); font-weight: 850; text-decoration: underline; text-underline-offset: 4px; }
     .floating-wa { position: fixed; right: 16px; bottom: 16px; z-index: 10; min-height: 56px; padding: 0 20px; border-radius: 999px; color: #fff; background: #16a34a; box-shadow: 0 18px 44px rgba(22,163,74,.36); font-weight: 950; display: inline-flex; align-items: center; gap: 9px; transition: transform .22s var(--ease), box-shadow .22s var(--ease); }
-    footer { padding: 24px 0 90px; color: var(--muted); font-size: 13px; background: #fff; border-top: 1px solid var(--line); }
+    .footer { padding: 66px 0 96px; color: rgba(255,255,255,.78); background: #070b13; }
+    .footer-grid { display: grid; grid-template-columns: minmax(260px, 1.4fr) repeat(3, minmax(0, .8fr)); gap: 34px; align-items: start; }
+    .footer-brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; font-weight: 950; }
+    .footer-brand .brand-mark { width: 42px; height: 42px; }
+    .footer p { margin: 14px 0 0; color: rgba(255,255,255,.66); line-height: 1.6; }
+    .footer h4 { margin: 0 0 14px; color: #fff; font-family: "Space Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .footer-list { display: grid; gap: 9px; }
+    .footer-list a, .footer-list span { color: rgba(255,255,255,.66); font-size: 14px; line-height: 1.5; }
+    .footer-list a:hover { color: #fff; }
+    .footer .button { margin-top: 20px; min-height: 44px; color: #fff; background: var(--secondary); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 18px; margin-top: 42px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.50); font-size: 12px; }
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s var(--ease), transform .55s var(--ease); }
     .reveal.is-visible { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion: reduce) {
@@ -160,21 +172,20 @@
       .reveal { opacity: 1; transform: none; }
     }
     @media (min-width: 761px) {
-      .hero { background-image: linear-gradient(90deg, rgba(7,11,19,.94) 0%, rgba(7,11,19,.80) 39%, rgba(7,11,19,.18) 100%), url('assets/images/hero-desktop.webp'), linear-gradient(135deg, var(--primary), var(--navy)); background-position: center; }
+      .hero { background-image: linear-gradient(90deg, rgba(7,11,19,.88) 0%, rgba(7,11,19,.58) 42%, rgba(7,11,19,.10) 100%), url('assets/images/hero-desktop.webp'), linear-gradient(135deg, var(--primary), var(--navy)); background-position: center; }
     }
     @media (max-width: 760px) {
       .wrap { width: min(100% - 28px, 1180px); }
-      .hero { min-height: 96svh; background-position: center; }
+      .hero { min-height: 92svh; background-position: center; }
       .nav { position: absolute; width: min(100% - 28px, 1180px); border-radius: 16px; padding: 10px; }
       .brand-mark { width: 36px; height: 36px; }
       .nav-links, .nav-cta { display: none; }
-      .hero-content { min-height: 96svh; padding: 114px 0 28px; }
-      h1 { font-size: clamp(40px, 13vw, 62px); }
-      .lead { font-size: 17px; }
+      .hero-content { min-height: 92svh; padding: 112px 0 28px; }
+      h1 { font-size: clamp(39px, 13vw, 60px); line-height: .92; }
+      .hero-line, .lead { font-size: 17px; }
       .actions .button { width: 100%; }
-      .hero-proof, .service-grid, .split, .band-grid, .region-grid, .step-grid, .faq-grid { grid-template-columns: 1fr; }
-      .hero-proof { margin-top: 34px; }
-      .proof-item { padding: 15px; }
+      .service-grid, .split, .band-grid, .region-grid, .step-grid, .faq-grid, .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
       section { padding: 58px 0; }
       .split-media, .split-media img { min-height: 360px; }
       .signal-grid { grid-template-columns: 1fr; }
@@ -196,19 +207,18 @@
     </nav>
     <div class="wrap hero-content">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Curitiba e região metropolitana | carros populares e multimarcas</p>
-        <h1>Oficina para carros populares e multimarcas, com atendimento direto e sem enrolação.</h1>
-        <p class="lead">A Auto Center Modelo atende motoristas de Curitiba e região com diagnóstico claro, orientação objetiva e contato rápido pelo WhatsApp para marcas como Fiat, Chevrolet, Volkswagen, Renault, Hyundai, Toyota, Honda, Nissan.</p>
+        <p class="eyebrow">Curitiba e região metropolitana</p>
+        <h1>Auto Center Modelo</h1>
+        <p class="hero-line">Oficina multimarcas em Curitiba para cuidar do carro sem complicação.</p>
         <div class="actions">
           <a class="button primary" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Auto%20Center%20Modelo%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener noreferrer"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>Agendar pelo WhatsApp</a>
-          <a class="button secondary" href="#servicos"><i class="ph ph-list-checks" aria-hidden="true"></i>Ver serviços</a>
+          <a class="button secondary" href="#servicos">Ver serviços<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
-      </div>
-      <div class="hero-proof reveal" aria-label="Destaques da oficina">
-        <div class="proof-item"><i class="ph ph-star" aria-hidden="true"></i><strong>4,7/5</strong><span>128 avaliações</span></div>
-        <div class="proof-item"><i class="ph ph-map-pin" aria-hidden="true"></i><strong>Curitiba</strong><span>Atendimento local e RMC</span></div>
-        <div class="proof-item"><i class="ph ph-car-profile" aria-hidden="true"></i><strong>Marcas</strong><span>Fiat, Chevrolet, Volkswagen, Renault, Hyundai, Toyota, Honda, Nissan</span></div>
-        <div class="proof-item"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><strong>WhatsApp</strong><span>Contato direto para agendar</span></div>
+        <div class="hero-meta" aria-label="Resumo da oficina">
+          <span>4,7/5</span>
+          <span>carros populares e multimarcas</span>
+          <span>Curitiba e RMC</span>
+        </div>
       </div>
     </div>
   </header>
@@ -217,7 +227,7 @@
     <section class="brand-strip">
       <div class="wrap">
         <p class="eyebrow">Marcas atendidas</p>
-        <div class="brand-rail"><span class="brand-pill"><i class="ph ph-car-profile" aria-hidden="true"></i>Fiat</span><span class="brand-pill"><i class="ph ph-car-profile" aria-hidden="true"></i>Chevrolet</span><span class="brand-pill"><i class="ph ph-car-profile" aria-hidden="true"></i>Volkswagen</span><span class="brand-pill"><i class="ph ph-car-profile" aria-hidden="true"></i>Renault</span><span class="brand-pill"><i class="ph ph-car-profile" aria-hidden="true"></i>Hyundai</span><span class="brand-pill"><i class="ph ph-car-profile" aria-hidden="true"></i>Toyota</span><span class="brand-pill"><i class="ph ph-car-profile" aria-hidden="true"></i>Honda</span><span class="brand-pill"><i class="ph ph-car-profile" aria-hidden="true"></i>Nissan</span></div>
+        <div class="brand-rail"><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Fiat</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Chevrolet</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Volkswagen</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Renault</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Hyundai</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Toyota</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Honda</span><span class="brand-pill"><i class="ph ph-car" aria-hidden="true"></i>Nissan</span></div>
       </div>
     </section>
 
@@ -225,8 +235,8 @@
       <div class="wrap">
         <div class="section-head center reveal">
           <p class="eyebrow">Serviços</p>
-          <h2>O que o cliente precisa entender em poucos segundos.</h2>
-          <p>Uma página de conversão precisa deixar claro o que a oficina faz, quais carros atende e qual é o próximo passo. Aqui, o caminho natural é chamar no WhatsApp.</p>
+          <h2>Serviços fáceis de reconhecer. Decisão mais rápida.</h2>
+          <p>O visitante entende o essencial sem garimpar informação: tipo de atendimento, marcas, localização e canal direto.</p>
         </div>
         <div class="service-grid">
           <article class="service-card reveal"><img src="assets/images/service-1.webp" width="1024" height="768" alt="Diagnóstico automotivo para carros populares e multimarcas"><div class="service-body"><h3><i class="ph ph-gauge" aria-hidden="true"></i>Diagnóstico preciso</h3><p>Barulhos, luzes no painel, falhas, perda de desempenho e dúvidas sobre manutenção são explicados com clareza antes do serviço.</p></div></article>
@@ -244,7 +254,7 @@
           <p>O visitante não quer decifrar um site. Ele quer saber se a oficina atende o carro dele, se está perto, se passa confiança e como falar agora. A página organiza isso em uma sequência simples.</p>
           <div class="benefit-list">
             <div class="benefit"><i class="ph ph-check-circle" aria-hidden="true"></i><div><strong>Atendimento reconhecível</strong><span>Curitiba, RMC, bairros e rotina real de quem dirige na região.</span></div></div>
-            <div class="benefit"><i class="ph ph-car-profile" aria-hidden="true"></i><div><strong>Marcas e perfil de veículo</strong><span>Conteúdo ajustado para carros populares e multimarcas, sem parecer uma oficina genérica.</span></div></div>
+            <div class="benefit"><i class="ph ph-car" aria-hidden="true"></i><div><strong>Marcas e perfil de veículo</strong><span>Conteúdo ajustado para carros populares e multimarcas, sem parecer uma oficina genérica.</span></div></div>
             <div class="benefit"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><div><strong>CTA direto</strong><span>Botões de WhatsApp com mensagem pronta para reduzir atrito.</span></div></div>
           </div>
         </div>
@@ -264,7 +274,7 @@
         </div>
         <div class="signal-grid">
           <div class="signal"><i class="ph ph-map-pin" aria-hidden="true"></i><strong>Localização clara</strong><span>Curitiba e região metropolitana</span></div>
-          <div class="signal"><i class="ph ph-car-profile" aria-hidden="true"></i><strong>Marcas atendidas</strong><span>Fiat, Chevrolet, Volkswagen, Renault, Hyundai, Toyota, Honda, Nissan</span></div>
+          <div class="signal"><i class="ph ph-car" aria-hidden="true"></i><strong>Marcas atendidas</strong><span>Fiat, Chevrolet, Volkswagen, Renault, Hyundai, Toyota, Honda, Nissan</span></div>
           <div class="signal"><i class="ph ph-question" aria-hidden="true"></i><strong>FAQ com intenção de busca</strong><span>Dúvidas reais antes de pedir orçamento.</span></div>
           <div class="signal"><i class="ph ph-sparkle" aria-hidden="true"></i><strong>Dados semânticos</strong><span>Schema, headings, contexto local e conteúdo em PT-BR.</span></div>
         </div>
@@ -328,8 +338,40 @@
 
   <a class="floating-wa" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Auto%20Center%20Modelo%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener noreferrer"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>Agendar pelo WhatsApp</a>
 
-  <footer>
-    <div class="wrap">Prévia criada pela Agência Ampler. Esta página é demonstrativa e ainda não representa o site oficial da empresa.</div>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="#"><span class="brand-mark">A</span><span>Auto Center Modelo</span></a>
+          <p>Auto Center Modelo em Curitiba: atendimento para carros populares e multimarcas, com contato direto e informações organizadas para busca local.</p>
+          <a class="button" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Auto%20Center%20Modelo%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener noreferrer"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>Agendar pelo WhatsApp</a>
+        </div>
+        <div>
+          <h4>Serviços</h4>
+          <div class="footer-list">
+            <span>Diagnóstico automotivo</span>
+            <span>Freios e suspensão</span>
+            <span>Revisão preventiva</span>
+          </div>
+        </div>
+        <div>
+          <h4>Marcas</h4>
+          <div class="footer-list"><span>Fiat, Chevrolet, Volkswagen, Renault, Hyundai, Toyota, Honda, Nissan</span></div>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <div class="footer-list">
+            <span>WhatsApp +55 (41) 99999-9999 · contato@example.com</span>
+            <span>Curitiba e região metropolitana</span>
+            
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Prévia criada pela Agência Ampler.</span>
+        <span>SEO local · Schema · WhatsApp · Mobile-first</span>
+      </div>
+    </div>
   </footer>
   <script>
     const observer = new IntersectionObserver((entries) => {
